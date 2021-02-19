@@ -1,6 +1,1 @@
-# Repositorio del curso desarrollo en la web
-
-## Curso 2021-1
-
-- TuHabitad html-css-js [link] (https://github.com/suntiago93/desarrollo-web-fronend/tree/basic)
-- TuHabitad vue
+# En este repositorio podras encontrar el codigo compuesto por html, css y js para el proyecto de aula.
