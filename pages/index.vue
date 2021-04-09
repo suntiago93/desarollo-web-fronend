@@ -45,7 +45,7 @@
     <v-img
       class="white--text align-end"
       height="400px"
-      :src="require('../assets/images/reserva-web.jpg')"
+      src="images/reserva-web.jpg"
     >
     </v-img>
     <v-card-subtitle class="pb-0"><h2 style="text-align: center;"> Reserva establecimientos</h2></v-card-subtitle>
@@ -63,7 +63,7 @@
     <v-img
       class="white--text align-end"
       height="400px"
-      :src="require('../assets/images/pago.png')"
+      src="images/pago.png"
     >
     </v-img>
     <v-card-subtitle class="pb-0"><h2 style="text-align: center;"> Realiza pagos</h2></v-card-subtitle>
@@ -80,7 +80,7 @@
     <v-img
       class="white--text align-end"
       height="400px"
-      :src="require('../assets/images/archivo.jpg')"
+      src="images/archivo.jpg"
     >
     </v-img>
     <v-card-subtitle class="pb-0"><h2 style="text-align: center;"> Consultas facturas y mas</h2></v-card-subtitle>
@@ -111,7 +111,7 @@
       class="white--text align-end"
       height="600px"
       width="1200px"
-      :src="require('../assets/images/unidadResidencial.png')"
+      src='/images/unidadResidencial.png'
     >
     <v-row>
       <v-col>
@@ -133,7 +133,6 @@
         tile
         width="350"
         height="250"
-        text-align:center;
         color="rgb(0, 0, 0, 0.5)"
       >
          <v-form

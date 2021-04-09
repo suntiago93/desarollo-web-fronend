@@ -44,8 +44,9 @@
 
 <script>
   export default {
-    
+
     layout:"lHome",
+    
       beforeMount(){
           this.getUsuario();
       },
