@@ -1,5 +1,5 @@
 <template>
- <div>
+ 
    
   <v-app >
     <nuxt/>
@@ -11,7 +11,7 @@
     <div > &copy; {{ new Date().getFullYear() }} TuHábitat Inc. Todos los derechos reservados</div>
     </v-footer>
   </v-app>
-  </div>
+  
 </template>
 
 <script>

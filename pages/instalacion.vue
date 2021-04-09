@@ -1,4 +1,6 @@
 <template>
+<v-container  >
+
   <v-card
     class="mx-auto"
     max-width="400"
@@ -37,10 +39,12 @@
       </v-btn>
     </v-card-actions>
   </v-card>
+</v-container>
 </template>
 
 
 <script>
   export default {
+    layout:"lHome"
   }
 </script>

@@ -168,7 +168,7 @@
       
       width="220px"
       rounded
-      @click="validate"
+    
     >
     <strong >Enviar informacion</strong>
     </v-btn>
@@ -220,15 +220,8 @@ export default {
       }),
 
     methods: {
-      validate () {
-        this.$refs.form.validate()
-      },
-      reset () {
-        this.$refs.form.reset()
-      },
-      resetValidation () {
-        this.$refs.form.resetValidation()
-      },
+     
+     
     },
 }
 </script>

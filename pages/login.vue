@@ -1,6 +1,6 @@
 <template>
 <div style="margin-top: 10rem; margin-left:30%"> 
-  <v-container>
+  <v-container >
       <v-card
         outlined
         tile
@@ -8,9 +8,9 @@
         height="300"
         color="rgb(77,152,189, 0.1)"
       >
-      <h3 style="text-align: center; color:blue">Ingrese a otra dimension </h3>
+      <h3 style=" color:blue">Ingrese a otra dimension </h3>
          <v-form
-          ref="form"
+          ref="formularioLogin"
           v-model="valid"
           lazy-validation
           class="mt-5"
@@ -18,7 +18,7 @@
   >
   <div style="margin-top:6rem">
     <v-text-field
-      v-model="email"
+      v-model="usuario.email"
       :rules="regla.email"
       label="Email"
       required
@@ -30,7 +30,7 @@
     ></v-text-field>
 </div>
     <v-text-field
-      v-model="clave"
+      v-model="usuario.clave"
       :rules="regla.clave"
       label="clave"
       type="password"
@@ -45,7 +45,7 @@
       :disabled="!valid"
       color="rgb(30, 181,181, 0.3)"
       width="200px"
-      @click="login()"
+      @click="login"
       rounded
       
     >
@@ -53,27 +53,21 @@
     </v-btn>
     </div>
          </v-form>
-
       </v-card>
-      
-     
   </v-container>
     </div>
 </template>
 
 <script>
-
+const url_api='http://localhost:3001/usuario/';
 
 export default {
-  components: {
-    
-  },
   data: () => ({
       valid: true,
-      usuario:{
-        email:"",
-        clave:""
-      },
+     usuario:{
+       email:"",
+       clave:"",
+     },
       regla:{
           clave:[ v => !!v || ' Is required'],
           email:[v => /.+@.+\..+/.test(v) || 'E-mail  be valid'],
@@ -81,8 +75,32 @@ export default {
       }),
 
     methods: {
-      login () {
-        this.$router.push("home")
+    async login () {
+        if (this.$refs.formularioLogin.validate()) {
+          let response = await this.$axios.get(url_api);
+          let usuarios=response.data;
+          let buscar=usuarios.find(x=>{return x.email == this.usuario.email && x.clave == this.usuario.clave});
+          if(buscar)
+          {
+            this.$router.push("/home")
+          }
+          else{
+            this.$swal.fire({
+              type:"error",
+              title: "opps",
+              text:"El correo o o clave son incorrectas",
+              allowEscapekey:false,
+              allowOutsideClick:false,
+            })
+          }
+        } else {
+          this.$swal.fire({
+            type:"warning",
+            title:"Formulario incompleto.",
+            text: "hay campos "
+          })
+        }
+        
       },
       
     },
