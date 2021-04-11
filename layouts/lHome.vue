@@ -19,35 +19,20 @@
           <v-app-bar-nav-icon @click.stop="openMenu = !openMenu"/>
           <v-toolbar-title v-text="title"/>
       </v-app-bar>
-               
-
       <v-main>
           <v-container fill-height>
               <nuxt/>  
           </v-container>
       </v-main>
 
-
-       <v-footer app>
-           <center >
-<v-row>
-    <v-col>
-        <h3><strong>acerca de </strong> </h3>
-        <v-btn  class="text-none" color="white"   plain to="#servicios"><small> Politica de privacidad</small> </v-btn>
-        <br>
-       <v-btn  class="text-none" color="blue"  plain to="#contacto"> <small> Condiciones de uso</small> </v-btn>
-       <br>
-       <v-btn  class="text-none" color="blue"  plain to="#contacto"> <small> Creditos</small> </v-btn>
-    </v-col>
-    <v-col>
-        <h3><strong>opiniones </strong></h3>
-        <v-btn  class="text-none" color="red"   plain to="#servicios"><small> Lo que dicen nuestros clientes</small> </v-btn>
-    </v-col>
-</v-row>
-<br>
-        <span> &copy; {{ new Date().getFullYear() }} TuHábitat Inc. Todos los derechos reservados</span>
-           </center>
-    </v-footer>
+      <v-footer
+      :absolute="!fixed"
+      app
+      padless
+    >
+    <div > &copy; {{ new Date().getFullYear() }} TuHábitat Inc. Todos los derechos reservados</div>
+    </v-footer>  
+      
   </v-app>
 </template>
 
@@ -55,6 +40,7 @@
 export default {
 data(){
     return{
+        fixed:false,
         openMenu:false,
         clipped:false,
         items:[
@@ -71,10 +57,22 @@ data(){
             to:"/usuario/"
             },
              {
-                 id:"instalacion",
+            id:"reservas",
+            icon:"mdi-calendar-plus",
+            title:"Reservas",
+            to:"/reservas/"
+            },
+             {
+            id:"instalacion",
             icon:"mdi-home-city",
             title:"  Instalacion",
-            to:""
+            to:"/instalacion/"
+            },
+            {
+            id:"salir",
+            icon:"mdi-exit-to-app",
+            title:" salir",
+            to:"/"
             },
         ],
         

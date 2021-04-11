@@ -17,15 +17,15 @@
       model: 0,
       items: [
        {
-          src: require("../assets/images/unidadResidencial.png"),
+          src: '/images/unidadResidencial.png',
           title: "pagos"
         },
         {
-          src: require("../assets/images/unidadResidencial.png"),
+          src: '/images/unidadResidencial.png',
           title: "reservas"
         },
         {
-          src: require("../assets/images/unidadResidencial.png"),
+          src: '/images/unidadResidencial.png',
           title: "informacion"
         }
       ],

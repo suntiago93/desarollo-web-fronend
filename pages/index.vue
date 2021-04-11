@@ -147,7 +147,7 @@
       :rules="nameRules"
       label="Nombre"
       required
-      rounded-s
+      dark
       
       
     ></v-text-field>
@@ -157,7 +157,8 @@
       :rules="emailRules"
       label="Email"
       required
-      rounded-s
+      dark
+      
       
     ></v-text-field>
     <v-btn
@@ -200,7 +201,7 @@ import Hero from '~/components/Hero.vue'
 
 
 export default {
-  
+  layout:"lIndex",
   components: {
     Hero,
   },

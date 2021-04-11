@@ -2,7 +2,7 @@
 
 <v-container >
     <div style="margin-top:2%">
-    <h3>Formulario para registrar usuarios</h3>
+    <h2 style="color:rgb(30, 181,181, 0.9)">Formulario para registrar usuarios</h2>
     
 <v-form ref="formularioUsuario" v-model="valid" lazy-validation> 
  
@@ -114,10 +114,11 @@ export default {
           if (this.$refs.formularioUsuario.validate()) {
               let usuario=Object.assign({},this.usuario);
             let response= await this.$axios.post('http://localhost:3001/usuario',usuario);
-            this.$swal("agregado");  
+            this.$swal("El proceso de registro finalizo con exito");  
+            this.$refs.formularioUsuario.reset();
           }
           else{
-            console.log("mal ");
+            console.log("Ups hubo un error");
           }      
       },
 

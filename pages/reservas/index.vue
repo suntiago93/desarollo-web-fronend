@@ -3,15 +3,15 @@
    <v-row justify="center" align="center">
         <v-col cols="12">
             <v-card flat>
-              <h1 style="text-align:center;color:rgb(30, 181,181, 0.9)">lista de usuarios</h1>
+              <h1 style="text-align:center; color:rgb(30, 181,181, 0.9)"> lista de reservas</h1>
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn rounded color="rgb(30, 181,181, 0.9)" class="text-none; " @click="registrarUsuario()">Registrar usuario</v-btn>
+                <v-btn rounded color="rgb(30, 181,181, 0.9)" class="text-none; " @click="registrarReserva()">Registrar reserva</v-btn>
               </v-card-actions>
         
               <v-data-table
                 :headers="headers"
-                :items="usuario"
+                :items="reserva"
                 :items-per-page="5"
                 class="elevation-1"
                 >
@@ -48,7 +48,7 @@
     layout:"lHome",
     
       beforeMount(){
-          this.getUsuario();
+          this.getReserva();
       },
     data () {
       return {
@@ -58,23 +58,21 @@
             align: 'start',
             value: 'id',
           },
-          { text: 'Nombre', value: 'nombre'},
-          { text: 'Apellido', value: 'apellido'},
-          { text: 'Telefono', value: 'telefono'},
-          { text: 'Apartamento', value: 'apartamento' },
-          { text: 'Email', value: 'email' },
-          { text: 'Clave', value: 'clave' },
+          { text: 'Fecha', value: 'fecha'},
+          { text: 'Sector', value: 'sector' },
+          { text: 'Hora igreso', value: 'horaIngreso' },
+          { text: 'Hora salida', value: 'horaSalida' },
           { text: 'Acción', value: 'actions' }
         ],
-        usuario: [],
+        reserva: [],
       };
     },
         methods:{
-             async getUsuario()
+             async getReserva()
       {
           try {
-            let response= await this.$axios.get('http://localhost:3001/usuario')
-            this.usuario=response.data;
+            let response= await this.$axios.get('http://localhost:3001/reserva')
+            this.reserva=response.data;
           } catch (error) {
               
           }
@@ -83,7 +81,7 @@
       
       editItem(item)
       {
-        let url= "usuario/" + item.id;
+        let url= "/reservas/" + item.id;
         this.$router.push(url)
       },
       deleteItem(item)
@@ -99,14 +97,14 @@
 }).then(async(result) => {
   if (result.value) {
     try{
-      let url='http://localhost:3001/usuario/' + item.id;
+      let url='http://localhost:3001/reserva/' + item.id;
       let response= await this.$axios.delete(url);
       this.$swal.fire({
         type:"success",
         title:"operacion exitosa.",
         text:"el item se elimino correctamente"
       });
-      this.getUsuario();
+      this.getReserva();
     
     }catch (error){
       this.$swal.fire({
@@ -121,8 +119,8 @@
   );
 
   },
-  registrarUsuario(){
-    let url= '/usuario/formulario';
+  registrarReserva(){
+    let url= '/reservas/';
         this.$router.push(url)
   }
 
