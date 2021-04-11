@@ -6,7 +6,7 @@
               <h1 style="text-align:center; color:rgb(30, 181,181, 0.9)">Lista de instalaciones</h1>
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn rounded color="rgb(30, 181,181, 0.9)" class="text-none; " @click="registrarInstalacion()">Registrar usuario</v-btn>
+                <v-btn rounded color="rgb(30, 181,181, 0.9)" class="text-none; " @click="registrarInstalacion()">Registrar instalacion</v-btn>
               </v-card-actions>
         
               <v-data-table
@@ -79,7 +79,7 @@
       
       editItem(item)
       {
-        let url= "instalacion/" + item.id;
+        let url= "/instalacion/" + item.id;
         this.$router.push(url)
       },
       deleteItem(item)

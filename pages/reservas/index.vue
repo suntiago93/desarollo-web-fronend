@@ -120,7 +120,7 @@
 
   },
   registrarReserva(){
-    let url= '/reservas/';
+    let url= '/reservas/formulario';
         this.$router.push(url)
   }
 

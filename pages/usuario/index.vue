@@ -83,7 +83,7 @@
       
       editItem(item)
       {
-        let url= "usuario/" + item.id;
+        let url= "/usuario/" + item.id;
         this.$router.push(url)
       },
       deleteItem(item)
