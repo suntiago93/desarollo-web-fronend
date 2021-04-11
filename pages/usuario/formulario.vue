@@ -5,7 +5,15 @@
     <h2 style="color:rgb(30, 181,181, 0.9)">Formulario para registrar usuarios</h2>
     
 <v-form ref="formularioUsuario" v-model="valid" lazy-validation> 
- 
+ <div style="margin-left:80%"> <v-btn     
+            color="rgb(30, 181,181, 0.3)"
+            class="text-none"
+            to="/usuario"
+            rounded
+            >
+            Mostrar usuarios
+            </v-btn>
+ </div>
  <v-text-field
             v-model="usuario.id"
             :rules="regla.obligatorio"
@@ -56,36 +64,15 @@
             clearable
           ></v-text-field>
 
-          
-          <v-row
-          width="100px">
-          <v-col>
- <v-btn
-            
-            color="rgb(30, 181,181, 0.3)"
-            class="text-none"
-            to="/usuario"
-            rounded
-            >
-            Mostrar usuarios
-            </v-btn>
-          </v-col>
-<v-fab-transition>
-              <v-btn
+<v-btn
                 color="rgb(30, 181,181, 0.9)"
                 dark
-                absolute
-                
                 bottom
-                right
-                fab
+                right 
                 @click="agregar()"
               >
                 <v-icon>mdi-plus</v-icon>
               </v-btn>
-            </v-fab-transition>
-                        
-</v-row>
 </v-form>
 </div>
  
