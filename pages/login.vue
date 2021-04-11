@@ -18,7 +18,7 @@
   >
   <div style="margin-top:6rem">
     <v-text-field
-      v-model="usuario.email"
+      v-model="administrador.email"
       :rules="regla.email"
       label="Email"
       required
@@ -30,7 +30,7 @@
     ></v-text-field>
 </div>
     <v-text-field
-      v-model="usuario.clave"
+      v-model="administrador.clave"
       :rules="regla.clave"
       label="clave"
       type="password"
@@ -59,12 +59,12 @@
 </template>
 
 <script>
-const url_api='http://localhost:3001/usuario/';
-
+const url_api='http://localhost:3001/administrador/';
+const url_api2='http://localhost:3001/usuario/';
 export default {
   data: () => ({
       valid: true,
-     usuario:{
+     administrador:{
        email:"",
        clave:"",
      },
@@ -78,12 +78,22 @@ export default {
     async login () {
         if (this.$refs.formularioLogin.validate()) {
           let response = await this.$axios.get(url_api);
-          let usuarios=response.data;
-          let buscar=usuarios.find(x=>{return x.email == this.usuario.email && x.clave == this.usuario.clave});
+          let administrador=response.data;
+          let buscar=administrador.find(x=>{return x.email == this.administrador.email && x.clave == this.administrador.clave});
           if(buscar)
           {
             this.$router.push("/home")
           }
+          else {
+          let response = await this.$axios.get(url_api2);
+          let usuario=response.data;
+          let buscar2=usuario.find(x=>{return x.email == this.administrador.email && x.clave == this.administrador.clave});
+            if(buscar2)
+            {
+              this.$router.push("/homeUser")
+            }
+          
+
           else{
             this.$swal.fire({
               type:"error",
@@ -93,11 +103,12 @@ export default {
               allowOutsideClick:false,
             })
           }
+          }
         } else {
           this.$swal.fire({
             type:"warning",
             title:"Formulario incompleto.",
-            text: "hay campos "
+            text: "hay campos incompletos "
           })
         }
         
