@@ -1,0 +1,44 @@
+{
+  "usuario": [
+    {
+      "id": "1",
+      "nombre": "pedro",
+      "apellido": "perez",
+      "telefono": "2343",
+      "apartamento": "12",
+      "email": "pedro@hotmail.com",
+      "clave": "123"
+    },
+    {
+      "id": "2",
+      "nombre": "Juan",
+      "apellido": "perez",
+      "telefono": "31278590",
+      "apartamento": "8",
+      "email": "juan@hotmail.com",
+      "clave": "123"
+    }
+  ],
+  "instalacion": [
+    {
+      "id": "1",
+      "nombre": "gimnacio",
+      "capacidad": "5"
+    }
+  ],
+  "reserva": [
+    {
+      "id": "1",
+      "sector": "Piscina",
+      "fecha": "2021-04-29",
+      "horaIngreso": "10:25",
+      "horaSalida": "05:31"
+    }
+  ],
+  "administrador": [
+    {
+      "email": "jose@hotmail.com",
+      "clave": "123"
+    }
+  ]
+}

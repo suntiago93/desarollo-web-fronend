@@ -28,7 +28,7 @@
       dense
       
     ></v-text-field>
-</div>
+
     <v-text-field
       v-model="administrador.clave"
       :rules="regla.clave"
@@ -40,6 +40,8 @@
       rounded
       dense
     ></v-text-field>
+</div>
+    
     <div style="margin-left:25%">
     <v-btn
       :disabled="!valid"

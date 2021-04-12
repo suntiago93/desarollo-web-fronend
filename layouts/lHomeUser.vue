@@ -60,7 +60,7 @@ data(){
             id:"reservas",
             icon:"mdi-calendar-plus",
             title:"Reservas",
-            to:"/reservas/"
+            to:"//"
             },
              {
             id:"pagos",
