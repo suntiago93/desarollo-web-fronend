@@ -16,7 +16,7 @@
           class="mt-5"
     
   >
-  <div style="margin-top:6rem">
+  <div style="margin-top:3rem">
     <v-text-field
       v-model="administrador.email"
       :rules="regla.email"
@@ -27,8 +27,8 @@
       rounded
       dense
       
+      
     ></v-text-field>
-
     <v-text-field
       v-model="administrador.clave"
       :rules="regla.clave"
@@ -54,6 +54,7 @@
     <span> Ingresar </span>
     </v-btn>
     </div>
+  
          </v-form>
       </v-card>
   </v-container>

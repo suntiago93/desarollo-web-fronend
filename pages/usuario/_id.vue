@@ -43,7 +43,22 @@
             :rules="regla.obligatorio"
             label="Apartamento"
             required
-          ></v-text-field>            
+          ></v-text-field> 
+           <v-select
+           v-model="usuario.parqueadero"
+          :items="parqueadero"
+          label="Parqueadero"
+          :rules="regla.obligatoria"
+          required
+        ></v-select>  
+        <v-text-field
+            v-show="usuario.parqueadero == 'Si'"
+            v-model="usuario.numParqueadero"
+            :rules="regla.obligatoria"
+            label="Numero parqueadero"
+            required
+            clearable
+          ></v-text-field>                   
  <v-text-field
             v-model="usuario.email"
             :rules="regla.email"
@@ -94,6 +109,7 @@ export default {
    data: () => ({
       valid: true,
       usuario:{},
+       parqueadero: ['Si', 'No'],
       regla:{
           obligatorio:[ v => !!v || ' Is required'],
           email:[v => /.+@.+\..+/.test(v) || 'E-mail  be valid'],

@@ -24,12 +24,12 @@
     </div >
       <!-- Titulo de bajo carrucel -->
     <div>
-      <h2 id="title">somos una alternativa</h2>
+      <h1 id="title">Somos la alternativa</h1>
       </div> 
       <!-- Separador -->
       <div style="width:100px; height:90px;" id="servicios"> </div>
       <!-- Segundo titulo -->
-      <div><h1 class="black--text text--lighten-9" ><strong >Realizar cualquier transaccion sin salir de casa</strong></h1></div>
+      <div><h2 class=" text--lighten-9" style="color:rgb(84, 83, 83)" ><strong >Realiza diferentes tipos de operaciones sin salir de casa</strong></h2></div>
       <!-- Separador -->
   <div style="width:100px; height:30px;"> </div>
 

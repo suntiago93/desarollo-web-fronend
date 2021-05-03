@@ -17,6 +17,17 @@
       "apartamento": "8",
       "email": "juan@hotmail.com",
       "clave": "123"
+    },
+    {
+      "id": "4",
+      "nombre": "albert",
+      "apellido": "guzman",
+      "telefono": "345678",
+      "apartamento": "1508",
+      "parqueadero": "Si",
+      "numParqueadero": "22",
+      "email": "albert@hotmail.com",
+      "clave": "123"
     }
   ],
   "instalacion": [
