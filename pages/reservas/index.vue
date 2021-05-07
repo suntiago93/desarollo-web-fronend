@@ -60,8 +60,7 @@
           },
           { text: 'Fecha', value: 'fecha'},
           { text: 'Sector', value: 'sector' },
-          { text: 'Hora igreso', value: 'horaIngreso' },
-          { text: 'Hora salida', value: 'horaSalida' },
+          { text: 'Horario', value: 'hora' },
           { text: 'Acción', value: 'actions' }
         ],
         reserva: [],
@@ -88,7 +87,7 @@
   {
    this.$swal.fire({
   type:"warning",
-  title: 'seguro?',
+  title: '¿Seguro?',
   text: "vas a borrar un registro!",
   icon: 'warning',
   allowEscapeKey:false,
