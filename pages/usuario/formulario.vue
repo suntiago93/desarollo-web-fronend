@@ -78,7 +78,7 @@
             required
             clearable
           ></v-text-field>
-
+<div style="height:80px;">
 <v-btn
                 color="rgb(30, 181,181, 0.9)"
                 dark
@@ -88,6 +88,7 @@
               >
                 <v-icon>mdi-plus</v-icon>
               </v-btn>
+              </div>
 </v-form>
 </div>
  

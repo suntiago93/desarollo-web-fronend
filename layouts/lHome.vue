@@ -1,23 +1,23 @@
 <template>
   <v-app>
-      <v-navigation-drawer v-model="openMenu"  app>
+      <v-navigation-drawer v-model="openMenu" color="black"  app>
       
       <v-list>
 
           <v-list-item v-for="item in items" :key="item.id" :to="item.to" router exact>
           <v-list-item-action>
-              <v-icon>{{item.icon}}</v-icon>
+              <v-icon style="color: rgb(77,152,189, 0.9)">{{item.icon}}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-              <v-list-item-title v-text="item.title"/>
+              <v-list-item-title  style="color:white " v-text="item.title"/>
           </v-list-item-content>
           </v-list-item>
       </v-list>
       
       </v-navigation-drawer>
-      <v-app-bar :clipped-left="clipped" fixed app>
-          <v-app-bar-nav-icon @click.stop="openMenu = !openMenu"/>
-          <v-toolbar-title v-text="title"/>
+      <v-app-bar :clipped-left="clipped" fixed color="black" app>
+          <v-app-bar-nav-icon color="rgb(77,152,189, 0.9)" @click.stop="openMenu = !openMenu"/>
+          <v-toolbar-title style="color:white" v-text="title"/>
       </v-app-bar>
       <v-main>
           <v-container fill-height>
@@ -76,7 +76,8 @@ data(){
             },
         ],
         
-        title:"Administracion"
+        title:"Administracion",
+        
     };
 }
 };

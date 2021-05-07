@@ -8,7 +8,7 @@
         height="300"
         color="rgb(77,152,189, 0.1)"
       >
-      <h3 style=" color:blue">Ingrese a otra dimension </h3>
+      <h3 style=" color:rgb(77,152,189, 0.9)">Ingrese a otra dimension </h3>
          <v-form
           ref="formularioLogin"
           v-model="valid"
@@ -21,6 +21,7 @@
       v-model="administrador.email"
       :rules="regla.email"
       label="Email"
+      append-icon="mdi-email"
       required
       outlined
       filled
@@ -34,6 +35,7 @@
       :rules="regla.clave"
       label="clave"
       type="password"
+      append-icon="mdi-lock"
       required
       outlined
       filled

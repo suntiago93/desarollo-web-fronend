@@ -39,11 +39,28 @@
   ],
   "reserva": [
     {
-      "id": "1",
+      "id": "3",
+      "sector": "Cuarto de estudio",
+      "fecha": "2021-05-07",
+      "hora": "8:00 hs - 11:00 hs"
+    },
+    {
+      "id": "5",
+      "sector": "Gimnacio",
+      "fecha": "2021-05-26",
+      "hora": "10:00 hs - 12:00 hs"
+    },
+    {
+      "id": "34",
+      "sector": "Gimnacio",
+      "fecha": "2021-05-31",
+      "hora": "8:00 hs - 10:00 hs"
+    },
+    {
+      "id": "787",
       "sector": "Piscina",
-      "fecha": "2021-04-29",
-      "horaIngreso": "10:25",
-      "horaSalida": "05:31"
+      "fecha": "2021-05-18",
+      "hora": "12:00 hs - 16:00 hs"
     }
   ],
   "administrador": [

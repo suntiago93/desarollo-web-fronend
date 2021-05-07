@@ -47,6 +47,7 @@
             readonly
             v-bind="attrs"
             v-on="on"
+            required
           ></v-text-field>
         </template>
         <v-date-picker
@@ -71,93 +72,50 @@
         </v-date-picker>
       </v-dialog>
       
+ <v-select
+          v-show="reserva.sector == 'Piscina'"
+          v-model="reserva.hora"
+          :items="rangoHorarioPiscina"
+          label="Rango de horario"
+          prepend-icon="mdi-clock-time-four-outline"
+          :rules="regla.obligatoria"
+          required
+        ></v-select>
 
-       <v-row>
-        <v-col>
-<v-dialog
-        ref="dialogHoraInicio"
-        v-model="modal3"
-        :return-value.sync="time"
-        persistent
-        width="290px"
-      >
-        <template v-slot:activator="{ on, attrs }">
-          <v-text-field
-            v-model="reserva.horaIngreso"
-            label="Desde"
-            prepend-icon="mdi-clock-time-four-outline"
-            readonly
-            v-bind="attrs"
-            v-on="on"
-          ></v-text-field>
-        </template>
-        <v-time-picker
-          v-if="modal3"
-          v-model="reserva.horaIngreso"
-          full-width
-        >
-          <v-spacer></v-spacer>
-          <v-btn
-            text
-            color="primary"
-            @click="modal3 = false"
-          >
-            Cancel
-          </v-btn>
-          <v-btn
-            text
-            color="primary"
-            @click="$refs.dialogHoraInicio.save(time)"
-          >
-            OK
-          </v-btn>
-        </v-time-picker>
-      </v-dialog>
-        </v-col>
+         <v-select
+         v-show="reserva.sector == 'Gimnacio'"
+           v-model="reserva.hora"
+          :items="rangoHorarioGimnacio"
+          label="Rango de horario"
+          prepend-icon="mdi-clock-time-four-outline"
+          :rules="regla.obligatoria"
+          required
+        ></v-select>
+         <v-select
+         v-show="reserva.sector == 'Cuarto de eventos'"
+           v-model="reserva.hora"
+          :items="rangoHorarioEvento"
+          label="Rango de horario"
+          prepend-icon="mdi-clock-time-four-outline"
+          :rules="regla.obligatoria"
+          required
+        ></v-select>
+         <v-select
+         v-show="reserva.sector == 'Cuarto de estudio'"
+           v-model="reserva.hora"
+          :items="rangoHorarioEstudio"
+          label="Rango de horario"
+          prepend-icon="mdi-clock-time-four-outline"
+          :rules="regla.obligatoria"
+          required
+        ></v-select>
+        <v-card
+        color="blue"
+        v-show="reserva.sector == 'Cuarto de eventos'">
+        <p> La reserva de esta area tiene un valor de 80.000 $ </p>
 
-        <v-col>
-<v-dialog
-        ref="dialogHoraSalida"
-        v-model="modal4"
-        :return-value.sync="time1"
-        persistent
-        width="290px"
-      >
-        <template v-slot:activator="{ on, attrs }">
-          <v-text-field
-            v-model="reserva.horaSalida"
-            label="Hasta"
-            prepend-icon="mdi-clock-time-four-outline"
-            readonly
-            v-bind="attrs"
-            v-on="on"
-          ></v-text-field>
-        </template>
-        <v-time-picker
-          v-if="modal4"
-          v-model="reserva.horaSalida"
-          full-width
-        >
-          <v-spacer></v-spacer>
-          <v-btn
-            text
-            color="primary"
-            @click="modal4 = false"
-          >
-            Cancel
-          </v-btn>
-          <v-btn
-            text
-            color="primary"
-            @click="$refs.dialogHoraSalida.save(time1)"
-          >
-            OK
-          </v-btn>
-        </v-time-picker>
-      </v-dialog>
-        </v-col>
+        </v-card>
       
-      </v-row>
               <v-btn
                 color="rgb(30, 181,181, 0.9)"
                 dark
@@ -188,16 +146,12 @@ export default {
       modal: false,
       menu2: false,
 
-       time: null,
-        menu3: false,
-        modal3: false,
-
-        time1: null,
-        menu4: false,
-        modal4: false,
-
-      reserva:{id:"", sector: "", fecha:"",horaIngreso:"",horaSalida:""},
+      reserva:{id:"", sector: "", fecha:"",hora:""},
        area: ['Piscina', 'Gimnacio', 'Cuarto de eventos', 'Cuarto de estudio'],
+       rangoHorarioPiscina: ['8:00 hs - 12:00 hs', '12:00 hs - 16:00 hs', '16:00 hs - 20:00 hs'],
+       rangoHorarioGimnacio: ['8:00 hs - 10:00 hs', '10:00 hs - 12:00 hs', '12:00 hs - 14:00 hs', '14:00 hs - 16:00 hs', '16:00 hs - 18:00 hs', '18:00 hs - 20:00 hs'],
+       rangoHorarioEvento: ['8:00 hs - 13:00 hs', '13:00 hs - 18:00 hs', '18:00 hs - 23:00 hs'],
+       rangoHorarioEstudio: ['8:00 hs - 11:00 hs', '11:00 hs - 14:00 hs', '14:00 hs - 17:00 hs' , '17:00 hs - 20:00 hs'],
       regla:{
           obligatorio:[ v => !!v || ' Is required'],
           email:[v => /.+@.+\..+/.test(v) || 'E-mail  be valid'],
@@ -208,18 +162,17 @@ export default {
    methods: {
      async agregar () {
        try{
+         
           if (this.$refs.formularioReserva.validate()) {
              let reservas=Object.assign({},this.reserva);
             let response= await this.$axios.post('http://localhost:3001/reserva',reservas);
-            this.$swal("Evento agregado");
+            this.$swal("Su reserva fue exitosa");
             this.$refs.formularioReserva.reset();
-          }
-
             }
+          }
           catch(error){
-            this.$swal("existe un error  " + error.toISOString);
+            this.$swal("existe un error" + error.toISOString);
          }  
-              
       },
 
      
