@@ -78,6 +78,16 @@
             required
             clearable
           ></v-text-field>
+
+          <v-select
+           v-model="usuario.rol"
+           :items="roles"
+           item-value="id"
+           item-text="nombre"
+           label="rol"
+           :rules="regla.obligatoria"
+           required
+        ></v-select>
 <div style="height:80px;">
 <v-btn
                 color="rgb(30, 181,181, 0.9)"
@@ -106,6 +116,11 @@ export default {
       valid: true,
       usuario:{id:"",nombre:"",apellido:"",telefono:"",apartamento:"",parqueadero:"",numParqueadero:"",email:"",clave:""},
       parqueadero: ['Si', 'No'],
+       roles: [ {id:1,nombre:'administrador'},
+                {id:2,nombre:'usuario'} ,
+                {id:3,nombre:'invitado'},
+                {id:1,nombre:'otro'}
+        ],
       regla:{
           obligatorio:[ v => !!v || ' Is required'],
           email:[v => /.+@.+\..+/.test(v) || 'E-mail  be valid'],

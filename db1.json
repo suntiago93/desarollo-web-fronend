@@ -28,6 +28,18 @@
       "numParqueadero": "22",
       "email": "albert@hotmail.com",
       "clave": "123"
+    },
+    {
+      "id": "789",
+      "nombre": "aa",
+      "apellido": "a",
+      "telefono": "23443",
+      "apartamento": "12",
+      "parqueadero": "No",
+      "numParqueadero": "",
+      "email": "aaaa@hotmail.com",
+      "clave": "123",
+      "rol": 1
     }
   ],
   "instalacion": [

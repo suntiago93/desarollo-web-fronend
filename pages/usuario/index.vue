@@ -64,6 +64,7 @@
           { text: 'Apartamento', value: 'apartamento' },
           { text: 'Email', value: 'email' },
           { text: 'Clave', value: 'clave' },
+          { text: 'Rol', value: 'rol' },
           { text: 'Acción', value: 'actions' }
         ],
         usuario: [],
