@@ -1,11 +1,12 @@
 <template>
       <v-app>
+     
     <v-app-bar
       app
       color="black"
     >
         <!-- Titulo barra de vavegacion -->
-      <v-toolbar-title class="white--text"> TuHabitat </v-toolbar-title >
+      <v-toolbar-title class="white--text"> <v-btn  class="text-none" color="blue"  plain to="#"> TuHabitat </v-btn></v-toolbar-title >
       <v-spacer></v-spacer>
     <!-- Botones barra de navegacion -->
     <v-btn  class="text-none" color="white"   plain to="#servicios"> servicios </v-btn>
@@ -17,15 +18,23 @@
     
     
 <v-main>
-  <v-container fluid>
+  <v-container fluid >
       <!-- Carrucel con imagenes -->
-    <div class="images">
+      <v-row justify="center" align="center">
+        <v-card>
+           <div class="images">
       <Hero/>
-    </div >
+    </div>
+        </v-card>
+      </v-row>
+   
+    
       <!-- Titulo de bajo carrucel -->
+     
     <div>
       <h1 id="title">Somos la alternativa</h1>
       </div> 
+     
       <!-- Separador -->
       <div style="width:100px; height:90px;" id="servicios"> </div>
       <!-- Segundo titulo -->
@@ -35,7 +44,7 @@
 
   <!-- fila con imagenes y titulo servicios -->
   <div >
-  <v-row>
+  <v-row> 
     <v-col>
       <v-card
     class="mx-auto"
@@ -208,6 +217,7 @@ export default {
    data: () => ({
       valid: true,
       name: '',
+      
       nameRules: [
         v => !!v || 'Name is required',
        

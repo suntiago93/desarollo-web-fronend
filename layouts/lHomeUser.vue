@@ -1,21 +1,21 @@
 <template>
   <v-app>
-      <v-navigation-drawer v-model="openMenu"  app>
+      <v-navigation-drawer v-model="openMenu" color="rgb(8, 239, 247)" app>
       
       <v-list>
 
           <v-list-item v-for="item in items" :key="item.id" :to="item.to" router exact>
           <v-list-item-action>
-              <v-icon>{{item.icon}}</v-icon>
+              <v-icon style="color:white">{{item.icon}}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-              <v-list-item-title v-text="item.title"/>
+              <v-list-item-title style="color:grey " v-text="item.title"/>
           </v-list-item-content>
           </v-list-item>
       </v-list>
       
       </v-navigation-drawer>
-      <v-app-bar :clipped-left="clipped" fixed app>
+      <v-app-bar :clipped-left="clipped" color="rgb(8, 239, 247)" fixed app>
           <v-app-bar-nav-icon @click.stop="openMenu = !openMenu"/>
           <v-toolbar-title v-text="title"/>
       </v-app-bar>
@@ -54,19 +54,19 @@ data(){
             id:"perfil",
             icon:"mdi-account",
             title:" Perfil",
-            to:"//"
+            to:"/usuario/perfil/"
             },
              {
             id:"reservas",
             icon:"mdi-calendar-plus",
             title:"Reservas",
-            to:"//"
+            to:"/reservasUser/"
             },
              {
             id:"pagos",
             icon:"mdi-currency-usd-circle-outline",
             title:"Pagos",
-            to:"//"
+            to:"/reservasUser/pago/"
             },
             {
             id:"salir",

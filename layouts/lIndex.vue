@@ -21,7 +21,7 @@
            </center>
            <v-row>
     <div style="width:1350px"><v-divider></v-divider></div>
-        <span> &copy; {{ new Date().getFullYear() }} TuHábitat Inc. Todos los derechos reservados</span>
+        <span> &copy; {{ new Date().toISOString().substr(0, 10) }} TuHábitat Inc. Todos los derechos reservados</span>
 </v-row>
     </v-footer>
   </v-app>

@@ -1,5 +1,9 @@
 <template>
   
+<div style="justify:center">
+<p> hola</p>
+</div>
+  
 </template>
 
 <script>

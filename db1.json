@@ -73,6 +73,18 @@
       "sector": "Piscina",
       "fecha": "2021-05-18",
       "hora": "12:00 hs - 16:00 hs"
+    },
+    {
+      "id": "4",
+      "sector": "Cuarto de eventos",
+      "fecha": "2021-05-26",
+      "hora": ""
+    },
+    {
+      "id": "10",
+      "sector": "Cuarto de eventos",
+      "fecha": "2021-05-17",
+      "hora": "8:00 hs - 13:00 hs"
     }
   ],
   "administrador": [
