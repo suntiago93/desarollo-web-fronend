@@ -26,11 +26,11 @@
           ></v-text-field>
            <v-select
            v-model="reserva.sector"
-          :items="area"
-          label="Sector"
-          prepend-icon="mdi-city"
-          :rules="regla.obligatoria"
-          required
+           :items="area"
+           label="Sector"
+           prepend-icon="mdi-city"
+           :rules="regla.obligatoria"
+           required
         ></v-select>
         <v-dialog
         ref="dialogFecha"
@@ -146,7 +146,7 @@ export default {
       modal: false,
       menu2: false,
 
-      reserva:{id:"", sector: "", fecha:"",hora:""},
+      reserva:{id:"", sector: "", fecha:"",hora:"", estado:"0"},
        area: ['Piscina', 'Gimnacio', 'Cuarto de eventos', 'Cuarto de estudio'],
        rangoHorarioPiscina: ['8:00 hs - 12:00 hs', '12:00 hs - 16:00 hs', '16:00 hs - 20:00 hs'],
        rangoHorarioGimnacio: ['8:00 hs - 10:00 hs', '10:00 hs - 12:00 hs', '12:00 hs - 14:00 hs', '14:00 hs - 16:00 hs', '16:00 hs - 18:00 hs', '18:00 hs - 20:00 hs'],

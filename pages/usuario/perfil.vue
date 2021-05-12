@@ -3,19 +3,18 @@
 
 
  
-<v-row justify="center" align="center">
+
   <v-card
     color="rgb(8, 239, 247)"
     
   >
     <v-img
       height="200"
-      
       src='/images/triangulos.png'
     >
     </v-img>
     <v-form>
-      <v-container >
+      <v-container justify="center" align="center"  >
         <v-row>
           <v-col
             cols="12"
@@ -84,9 +83,8 @@
     </v-form>
     <v-divider></v-divider>
   </v-card>
-  </v-row>
+  
  
-
 
 
 </template>
@@ -103,9 +101,9 @@ valid: true
 </script>
 
 
-<style lang="scss">
-main {
-    background-color:rgba(8, 239, 247)
+  <style <style lang="scss">
+#a {
+    background:rgba(8, 239, 247),
 }
 </style>
 

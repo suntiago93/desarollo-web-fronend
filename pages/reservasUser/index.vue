@@ -127,3 +127,10 @@
   }
   }
 </script>
+
+
+ <style scoped>
+.v-application {
+    background-color:rgb(29, 212, 22)
+}
+</style>
